@@ -2,7 +2,6 @@ package it.polito.bigdata.hadoop.lab;
 
 import java.io.IOException;
 
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -16,7 +15,7 @@ class MapperBigData1 extends Mapper<
                     LongWritable, // Input key type
                     Text,         // Input value type
                     Text,         // Output key type
-                    IntWritable> {// Output value type
+                    Text> {// Output value type
     
     protected void map(
             LongWritable key,   // Input key type
@@ -24,5 +23,12 @@ class MapperBigData1 extends Mapper<
             Context context) throws IOException, InterruptedException {
 
     		/* Implement the map method */ 
+    	String[] fields = value.toString().split(",");
+    	String UserId = fields[2];
+    	String productId = fields[1];
+    	int reviewRate = Integer.parseInt(fields[6]);
+    	
+    	context.write(new Text(UserId), new Text(productId+"_"+reviewRate));
+    	
     }
 }

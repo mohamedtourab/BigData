@@ -3,8 +3,7 @@ package it.polito.bigdata.hadoop.lab;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -63,24 +62,24 @@ public class DriverBigData extends Configured implements Tool {
 		job.setJarByClass(DriverBigData.class);
 
 		// Set job input format
-		job.setInputFormatClass(...);
+		job.setInputFormatClass(TextInputFormat.class);
 
 		// Set job output format
-		job.setOutputFormatClass(...);
+		job.setOutputFormatClass(TextOutputFormat.class);
 
 		// Set map class
 		job.setMapperClass(MapperBigData1.class);
 
 		// Set map output key and value classes
-		job.setMapOutputKeyClass(...);
-		job.setMapOutputValueClass(...);
+		job.setMapOutputKeyClass(Text.class);
+		job.setMapOutputValueClass(Text.class);
 
 		// Set reduce class
 		job.setReducerClass(ReducerBigData1.class);
 
 		// Set reduce output key and value classes
-		job.setOutputKeyClass(...);
-		job.setOutputValueClass(...);
+		job.setOutputKeyClass(Text.class);
+		job.setOutputValueClass(FloatWritable.class);
 
 		// Set number of reducers
 		job.setNumReduceTasks(numberOfReducersJob1);
@@ -91,7 +90,7 @@ public class DriverBigData extends Configured implements Tool {
 			Job job2 = Job.getInstance(conf);
 
 			// Assign a name to the second job
-			job2.setJobName("Lab#3 - Ex.1 - step 2");
+			job2.setJobName("Lab#4 - Ex.1 - step 2");
 
 			/* */
 			// Change the following part of the code
@@ -110,27 +109,27 @@ public class DriverBigData extends Configured implements Tool {
 			job2.setJarByClass(DriverBigData.class);
 
 			// Set job input format
-			job2.setInputFormatClass(...);
+			job2.setInputFormatClass(KeyValueTextInputFormat.class);
 
 			// Set job output format
-			job2.setOutputFormatClass(...);
+			job2.setOutputFormatClass(TextOutputFormat.class);
 
 			// Set map class
 			job2.setMapperClass(MapperBigData2.class);
 
 			// Set map output key and value classes
-			job2.setMapOutputKeyClass(...);
-			job2.setMapOutputValueClass(...);
+			job2.setMapOutputKeyClass(Text.class);
+			job2.setMapOutputValueClass(FloatWritable.class);
 
 			// Set reduce class
 			job2.setReducerClass(ReducerBigData2.class);
 
 			// Set reduce output key and value classes
-			job2.setOutputKeyClass(...);
-			job2.setOutputValueClass(...);
+			job2.setOutputKeyClass(Text.class);
+			job2.setOutputValueClass(FloatWritable.class);
 
 			// Set the number of reducers of the second job 
-			numberOfReducersJob2 = ..;
+			numberOfReducersJob2 = 3;
 			job2.setNumReduceTasks(numberOfReducersJob2);
 
 			// Execute the second job and wait for completion
