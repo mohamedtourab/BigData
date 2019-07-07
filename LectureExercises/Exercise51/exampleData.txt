@@ -1,0 +1,28 @@
+Execute runSocket.sh to open the socket
+
+Execute runLocal.sh in another shell to start the Spark application
+
+
+
+Copy and past the first batch of data in the shell associated with the socket (i.e., send this data on the socket)
+155911480,FCA,1000
+155911480,GOOG,10040
+155911490,FCA,1004
+155911490,GOOG,10080
+155911500,FCA,1001
+155911500,GOOG,10100
+
+After 30 seconds copy and past the second batch of data
+155911510,FCA,1000
+155911510,GOOG,10110
+155911520,FCA,1007
+155911520,GOOG,10200
+155911530,FCA,1005
+155911530,GOOG,10205
+
+
+
+
+
+
+

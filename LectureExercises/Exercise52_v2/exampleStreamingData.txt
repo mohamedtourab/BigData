@@ -1,0 +1,31 @@
+Execute runSocket.sh to open the socket
+
+Execute runLocal.sh in another shell to start the Spark application
+
+
+
+Copy and past the first batch of data in the shell associated with the socket (i.e., send this data on the socket)
+155911480,FCA,1002
+155911480,GOOG,10050
+155911490,FCA,1004
+155911490,GOOG,10051
+155911500,FCA,1003
+155911500,GOOG,10052
+
+In the first batch there are no anomalous data
+
+After 60 seconds copy and past the second batch of data
+155911510,FCA,1006
+155911510,GOOG,10110
+155911520,FCA,1007
+155911520,GOOG,10098
+155911530,FCA,1007
+155911530,GOOG,10097
+
+
+In the second batch FCA and GOOG are charatacerized by anomalous prices
+
+
+
+
+

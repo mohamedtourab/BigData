@@ -1,0 +1,3 @@
+This is the first sentence and it contains some stopwords
+Second sentence with a stopword here and another here
+Third sentence of the stopword example
